@@ -1,0 +1,23 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Wider content area */
+.main-content {
+  max-width: min(1600px, 96vw);
+}
+
+/* Make tables scroll horizontally instead of forcing wrap or breaking layout */
+.main-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Keep table cells readable */
+.main-content th,
+.main-content td {
+  white-space: nowrap;
+}
