@@ -8,7 +8,7 @@
   max-width: min(1600px, 96vw);
 }
 
-/* Make tables scroll horizontally instead of forcing wrap or breaking layout */
+/* Make tables scroll horizontally */
 .main-content table {
   display: block;
   width: 100%;
@@ -16,8 +16,15 @@
   -webkit-overflow-scrolling: touch;
 }
 
-/* Keep table cells readable */
+/* Keep most columns compact (no wrapping) */
 .main-content th,
 .main-content td {
   white-space: nowrap;
+}
+
+/* Allow the Description column to wrap */
+.main-content th:nth-child(5),
+.main-content td:nth-child(5) {
+  white-space: normal;
+  min-width: 520px;
 }
