@@ -1,75 +1,56 @@
----
----
-
-@import "{{ site.theme }}";
+--- --- @import "{{ site.theme }}";
 
 /* Wider content area (docs-only repo) */
 .main-content {
   max-width: min(1700px, 96vw);
 }
 
-/*
-  Tables:
-  - Prefer fitting within the viewport by wrapping long content.
-  - Keep horizontal scroll only as a fallback.
-*/
-.main-content table {
-  width: 100%;
-  table-layout: fixed;          /* predictable column widths */
-  border-collapse: collapse;
-
-  display: block;               /* enables overflow scrolling */
-  overflow-x: auto;             /* fallback if still too wide */
+/* Scroll container for wide tables */
+.table-scroll {
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  margin: 1em 0;
 }
 
-/* Headers: left aligned by default */
-.main-content th {
+/* CLI table */
+.cli-table {
+  width: 100%;
+  table-layout: fixed;
+  /* makes colgroup widths behave predictably */
+  border-collapse: collapse;
+}
+
+.cli-table th {
   text-align: left;
+  /* ensures "Description" header is left-aligned */
+  white-space: nowrap;
 }
 
-/* Cells: allow wrapping so the Description column stays visible */
-.main-content th,
-.main-content td {
-  white-space: normal;
-  overflow-wrap: anywhere;      /* break long tokens like TEXT:{Mono8,Mono10,...} */
-  word-break: break-word;
+.cli-table th,
+.cli-table td {
   vertical-align: top;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  /* break long tokens like TEXT:{Mono8,Mono10,...} */
+  word-break: break-word;
 }
 
-/* Inline code in table cells should wrap too */
-.main-content table code {
+/* Center the Required column */
+.cli-table th.col-required,
+.cli-table td.col-required {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Keep option names on one line */
+.cli-table td.col-option code {
+  white-space: nowrap;
+}
+
+/* Allow code to wrap in Type/Default if it’s long */
+.cli-table td.col-type code,
+.cli-table td.col-default code {
   white-space: normal;
   overflow-wrap: anywhere;
   word-break: break-word;
-}
-
-/* Column widths tuned so the "Description" header is visible without scrolling on ~1920px screens */
-.main-content th:nth-child(1),
-.main-content td:nth-child(1) { /* Option */
-  width: 180px;
-  white-space: nowrap;
-}
-
-.main-content th:nth-child(2),
-.main-content td:nth-child(2) { /* Required */
-  width: 90px;
-  white-space: nowrap;
-  text-align: center;
-}
-
-.main-content th:nth-child(3),
-.main-content td:nth-child(3) { /* Type */
-  width: 380px;                /* wraps long enums instead of pushing Description off-screen */
-}
-
-.main-content th:nth-child(4),
-.main-content td:nth-child(4) { /* Default */
-  width: 140px;
-  white-space: nowrap;
-}
-
-.main-content th:nth-child(5),
-.main-content td:nth-child(5) { /* Description */
-  width: auto;
 }

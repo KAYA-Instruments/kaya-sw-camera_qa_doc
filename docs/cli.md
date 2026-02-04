@@ -1,5 +1,6 @@
 ---
 title: "Camera QA reference buffer generator"
+description: "CLI reference (public / user-facing options)"
 permalink: /cli/
 ---
 
@@ -19,23 +20,43 @@ kaya-sw-camera_qa_reference_buffer.exe [OPTIONS]
 
 ## Options
 
-| Option | Required | Type | Default | Description |
-|---|:---:|---|---|---|
-| `--Height` | yes | `UINT:POSITIVE` | `` | Image height in pixels |
-| `--PixelFormat` | yes | `TEXT:{Mono8,Mono10,Mono12,Mono14,Mono16}` | `` | PixelFormat: Mono8/Mono10/Mono12/Mono14/Mono16 |
-| `--TestPattern` | yes | `TEXT` | `` | TestPattern: Off\|GrayHorizontalRamp\|GrayVerticalRamp\|GrayDiagonalRamp\|GrayDiagonalIntervalRamp\|UserTestPattern or numeric code (e.g. 0x202) |
-| `--Width` | yes | `UINT:POSITIVE` | `` | Image width in pixels |
-| `--output` | yes | `TEXT` | `` | Output RAW file (unpacked by default) |
-| `--BinningHorizontal` | no | `UINT:UINT in [1 - 2]` | `1` | GenICam: BinningHorizontal (1 or 2) |
-| `--BinningMode` | no | `TEXT:{average,sum}` | `average` | GenICam: BinningMode (average or sum) |
-| `--BinningVertical` | no | `UINT:UINT in [1 - 2]` | `1` | GenICam: BinningVertical (1 or 2) |
-| `--TestPatternInterval` | no | `UINT` | `0` | Interval for GrayDiagonalIntervalRamp (required only for that pattern) |
-| `--TestPatternValueMax` | no | `INT:INT in [-1 - 4294967295]` | `4095` | Test pattern value maximum. Use -1 to auto-calculate from --PixelFormat bit depth |
-| `--TestPatternValueMin` | no | `UINT:UINT in [0 - 4294967295]` | `0` | Test pattern value minimum (applied as: value = min + base * step) |
-| `--TestPatternValueStep` | no | `UINT:UINT in [1 - 4294967295]` | `1` | Test pattern value step (applied as: value = min + base * step) |
-| `--help` | no | `` | `` | Print this help message and exit |
-| `--print-cli-json` | no | `` | `` | Print CLI schema as JSON and exit |
-| `--version` | no | `` | `` | Display program version information and exit |
+<div class="table-scroll">
+<table class="cli-table">
+  <colgroup>
+    <col style="width:220px;">
+    <col style="width:90px;">
+    <col style="width:380px;">
+    <col style="width:140px;">
+    <col>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th class="col-required">Required</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="col-option"><code>--Height</code></td><td class="col-required">yes</td><td class="col-type"><code>UINT:POSITIVE</code></td><td class="col-default"><code></code></td><td class="col-desc">Image height in pixels</td></tr>
+    <tr><td class="col-option"><code>--PixelFormat</code></td><td class="col-required">yes</td><td class="col-type"><code>TEXT:{Mono8,Mono10,Mono12,Mono14,Mono16}</code></td><td class="col-default"><code></code></td><td class="col-desc">PixelFormat: Mono8/Mono10/Mono12/Mono14/Mono16</td></tr>
+    <tr><td class="col-option"><code>--TestPattern</code></td><td class="col-required">yes</td><td class="col-type"><code>TEXT</code></td><td class="col-default"><code></code></td><td class="col-desc">TestPattern: Off|GrayHorizontalRamp|GrayVerticalRamp|GrayDiagonalRamp|GrayDiagonalIntervalRamp|UserTestPattern or numeric code (e.g. 0x202)</td></tr>
+    <tr><td class="col-option"><code>--Width</code></td><td class="col-required">yes</td><td class="col-type"><code>UINT:POSITIVE</code></td><td class="col-default"><code></code></td><td class="col-desc">Image width in pixels</td></tr>
+    <tr><td class="col-option"><code>--output</code></td><td class="col-required">yes</td><td class="col-type"><code>TEXT</code></td><td class="col-default"><code></code></td><td class="col-desc">Output RAW file (unpacked by default)</td></tr>
+    <tr><td class="col-option"><code>--BinningHorizontal</code></td><td class="col-required">no</td><td class="col-type"><code>UINT:UINT in [1 - 2]</code></td><td class="col-default"><code>1</code></td><td class="col-desc">GenICam: BinningHorizontal (1 or 2)</td></tr>
+    <tr><td class="col-option"><code>--BinningMode</code></td><td class="col-required">no</td><td class="col-type"><code>TEXT:{average,sum}</code></td><td class="col-default"><code>average</code></td><td class="col-desc">GenICam: BinningMode (average or sum)</td></tr>
+    <tr><td class="col-option"><code>--BinningVertical</code></td><td class="col-required">no</td><td class="col-type"><code>UINT:UINT in [1 - 2]</code></td><td class="col-default"><code>1</code></td><td class="col-desc">GenICam: BinningVertical (1 or 2)</td></tr>
+    <tr><td class="col-option"><code>--TestPatternInterval</code></td><td class="col-required">no</td><td class="col-type"><code>UINT</code></td><td class="col-default"><code>0</code></td><td class="col-desc">Interval for GrayDiagonalIntervalRamp (required only for that pattern)</td></tr>
+    <tr><td class="col-option"><code>--TestPatternValueMax</code></td><td class="col-required">no</td><td class="col-type"><code>INT:INT in [-1 - 4294967295]</code></td><td class="col-default"><code>4095</code></td><td class="col-desc">Test pattern value maximum. Use -1 to auto-calculate from --PixelFormat bit depth</td></tr>
+    <tr><td class="col-option"><code>--TestPatternValueMin</code></td><td class="col-required">no</td><td class="col-type"><code>UINT:UINT in [0 - 4294967295]</code></td><td class="col-default"><code>0</code></td><td class="col-desc">Test pattern value minimum (applied as: value = min + base * step)</td></tr>
+    <tr><td class="col-option"><code>--TestPatternValueStep</code></td><td class="col-required">no</td><td class="col-type"><code>UINT:UINT in [1 - 4294967295]</code></td><td class="col-default"><code>1</code></td><td class="col-desc">Test pattern value step (applied as: value = min + base * step)</td></tr>
+    <tr><td class="col-option"><code>--help</code></td><td class="col-required">no</td><td class="col-type"><code></code></td><td class="col-default"><code></code></td><td class="col-desc">Print this help message and exit</td></tr>
+    <tr><td class="col-option"><code>--print-cli-json</code></td><td class="col-required">no</td><td class="col-type"><code></code></td><td class="col-default"><code></code></td><td class="col-desc">Print CLI schema as JSON and exit</td></tr>
+    <tr><td class="col-option"><code>--version</code></td><td class="col-required">no</td><td class="col-type"><code></code></td><td class="col-default"><code></code></td><td class="col-desc">Display program version information and exit</td></tr>
+  </tbody>
+</table>
+</div>
 
 ## Output auto-naming (`@args@`)
 
