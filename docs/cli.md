@@ -1,5 +1,6 @@
 ---
-title: "kaya-sw-camera_qa_reference_buffer.exe reference"
+title: "Camera QA reference buffer generator"
+permalink: /cli/
 ---
 
 This page documents only user-facing options (SFNC-like):

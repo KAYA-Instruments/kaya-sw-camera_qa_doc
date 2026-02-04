@@ -3,28 +3,73 @@
 
 @import "{{ site.theme }}";
 
-/* Wider content area */
+/* Wider content area (docs-only repo) */
 .main-content {
-  max-width: min(1600px, 96vw);
+  max-width: min(1700px, 96vw);
 }
 
-/* Make tables scroll horizontally */
+/*
+  Tables:
+  - Prefer fitting within the viewport by wrapping long content.
+  - Keep horizontal scroll only as a fallback.
+*/
 .main-content table {
-  display: block;
   width: 100%;
-  overflow-x: auto;
+  table-layout: fixed;          /* predictable column widths */
+  border-collapse: collapse;
+
+  display: block;               /* enables overflow scrolling */
+  overflow-x: auto;             /* fallback if still too wide */
   -webkit-overflow-scrolling: touch;
 }
 
-/* Keep most columns compact (no wrapping) */
+/* Headers: left aligned by default */
+.main-content th {
+  text-align: left;
+}
+
+/* Cells: allow wrapping so the Description column stays visible */
 .main-content th,
 .main-content td {
+  white-space: normal;
+  overflow-wrap: anywhere;      /* break long tokens like TEXT:{Mono8,Mono10,...} */
+  word-break: break-word;
+  vertical-align: top;
+}
+
+/* Inline code in table cells should wrap too */
+.main-content table code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Column widths tuned so the "Description" header is visible without scrolling on ~1920px screens */
+.main-content th:nth-child(1),
+.main-content td:nth-child(1) { /* Option */
+  width: 180px;
   white-space: nowrap;
 }
 
-/* Allow the Description column to wrap */
+.main-content th:nth-child(2),
+.main-content td:nth-child(2) { /* Required */
+  width: 90px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.main-content th:nth-child(3),
+.main-content td:nth-child(3) { /* Type */
+  width: 380px;                /* wraps long enums instead of pushing Description off-screen */
+}
+
+.main-content th:nth-child(4),
+.main-content td:nth-child(4) { /* Default */
+  width: 140px;
+  white-space: nowrap;
+}
+
 .main-content th:nth-child(5),
-.main-content td:nth-child(5) {
-  white-space: normal;
-  min-width: 520px;
+.main-content td:nth-child(5) { /* Description */
+  width: auto;
 }
