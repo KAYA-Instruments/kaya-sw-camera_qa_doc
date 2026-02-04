@@ -1,56 +1,58 @@
 --- --- @import "{{ site.theme }}";
 
-/* Wider content area (docs-only repo) */
+/* Make docs wide */
 .main-content {
-  max-width: min(1700px, 96vw);
+  max-width: min(1700px, 96vw) !important;
 }
 
-/* Scroll container for wide tables */
-.table-scroll {
+/* Scroll wrapper (fallback only) */
+.main-content .table-scroll {
+  width: 100% !important;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin: 1em 0;
 }
 
-/* CLI table */
-.cli-table {
-  width: 100%;
-  table-layout: fixed;
-  /* makes colgroup widths behave predictably */
+/* IMPORTANT: keep table as a table (do not use display:block on table) */
+.main-content .table-scroll>table.cli-table {
+  width: 100% !important;
+  table-layout: fixed !important;
+  display: table !important;
   border-collapse: collapse;
 }
 
-.cli-table th {
-  text-align: left;
-  /* ensures "Description" header is left-aligned */
+/* Left-align headers */
+.main-content .table-scroll>table.cli-table thead th {
+  text-align: left !important;
   white-space: nowrap;
 }
 
-.cli-table th,
-.cli-table td {
-  vertical-align: top;
-  white-space: normal;
+/* Required column centered */
+.main-content .table-scroll>table.cli-table thead th.col-required,
+.main-content .table-scroll>table.cli-table tbody td.col-required {
+  text-align: center !important;
+  white-space: nowrap;
+}
+
+/* Allow wrapping in cells */
+.main-content .table-scroll>table.cli-table th,
+.main-content .table-scroll>table.cli-table td {
+  white-space: normal !important;
   overflow-wrap: anywhere;
-  /* break long tokens like TEXT:{Mono8,Mono10,...} */
   word-break: break-word;
+  vertical-align: top;
 }
 
-/* Center the Required column */
-.cli-table th.col-required,
-.cli-table td.col-required {
-  text-align: center;
+/* Keep option/default code compact */
+.main-content .table-scroll>table.cli-table td.col-option code,
+.main-content .table-scroll>table.cli-table td.col-default code {
   white-space: nowrap;
 }
 
-/* Keep option names on one line */
-.cli-table td.col-option code {
-  white-space: nowrap;
-}
-
-/* Allow code to wrap in Type/Default if it’s long */
-.cli-table td.col-type code,
-.cli-table td.col-default code {
-  white-space: normal;
+/* Allow code wrapping in Type/Description */
+.main-content .table-scroll>table.cli-table td.col-type code,
+.main-content .table-scroll>table.cli-table td.col-desc code {
+  white-space: normal !important;
   overflow-wrap: anywhere;
   word-break: break-word;
 }
