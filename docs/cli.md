@@ -5,7 +5,7 @@ title: "kaya-sw-camera_qa_reference_buffer.exe reference"
 This page documents only user-facing options (SFNC-like):
 
 - Options that start with an uppercase letter after `--`
-- Plus: `--help`, `--output`, `--version`, `--print-cli-json`
+- Plus: `--output`, `--help`, `--version`, `--print-cli-json`
 
 For the complete option list (including internal/dev placeholders), run:
 `kaya-sw-camera_qa_reference_buffer.exe --help`
