@@ -20,7 +20,10 @@ kaya-sw-camera_qa_reference_buffer.exe [OPTIONS]
 
 ## Options
 
-### OPTIONS
+Tip: groups below are collapsible (expand the ones you need).
+
+<details class="cli-group" open>
+<summary style="cursor:pointer; list-style:none;"><strong>&#9656; OPTIONS</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -46,7 +49,10 @@ kaya-sw-camera_qa_reference_buffer.exe [OPTIONS]
 </table>
 </div>
 
-### Image format
+</details>
+
+<details class="cli-group">
+<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Image format</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -75,7 +81,10 @@ kaya-sw-camera_qa_reference_buffer.exe [OPTIONS]
 </table>
 </div>
 
-### Test pattern
+</details>
+
+<details class="cli-group">
+<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Test pattern</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -112,7 +121,10 @@ kaya-sw-camera_qa_reference_buffer.exe [OPTIONS]
 </table>
 </div>
 
-### Black level correction
+</details>
+
+<details class="cli-group">
+<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Black level correction</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -139,7 +151,10 @@ kaya-sw-camera_qa_reference_buffer.exe [OPTIONS]
 </table>
 </div>
 
-### Binning
+</details>
+
+<details class="cli-group">
+<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Binning</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -167,7 +182,10 @@ kaya-sw-camera_qa_reference_buffer.exe [OPTIONS]
 </table>
 </div>
 
-### Output
+</details>
+
+<details class="cli-group">
+<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Output</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -193,7 +211,10 @@ kaya-sw-camera_qa_reference_buffer.exe [OPTIONS]
 </table>
 </div>
 
-### Extra
+</details>
+
+<details class="cli-group">
+<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Extra</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -221,7 +242,10 @@ kaya-sw-camera_qa_reference_buffer.exe [OPTIONS]
 </table>
 </div>
 
-### Meta
+</details>
+
+<details class="cli-group">
+<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Meta</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -248,6 +272,8 @@ kaya-sw-camera_qa_reference_buffer.exe [OPTIONS]
   </tbody>
 </table>
 </div>
+
+</details>
 
 
 ## Output auto-naming (`@args@`)
