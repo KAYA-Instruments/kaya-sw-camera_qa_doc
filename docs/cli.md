@@ -4,6 +4,14 @@ description: "CLI reference"
 permalink: /cli/
 ---
 
+<style>
+.cli-group > summary { cursor: pointer; list-style: none; }
+.cli-group > summary::-webkit-details-marker { display: none; }
+.cli-group > summary::marker { content: ""; }
+.cli-group > summary::before { content: "▶"; display: inline-block; width: 1.25em; transition: transform 120ms ease-in-out; }
+.cli-group[open] > summary::before { transform: rotate(90deg); }
+</style>
+
 This page lists the CLI options.
 
 Options that start with an uppercase letter after `--` are camera parameters (SFNC-like).
@@ -23,7 +31,7 @@ kaya-sw-camera_qa_reference_buffer.exe [OPTIONS]
 Tip: groups below are collapsible (expand the ones you need).
 
 <details class="cli-group" open>
-<summary style="cursor:pointer; list-style:none;"><strong>&#9656; OPTIONS</strong></summary>
+<summary class="cli-summary"><strong>OPTIONS</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -52,7 +60,7 @@ Tip: groups below are collapsible (expand the ones you need).
 </details>
 
 <details class="cli-group">
-<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Image format</strong></summary>
+<summary class="cli-summary"><strong>Image format</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -84,7 +92,7 @@ Tip: groups below are collapsible (expand the ones you need).
 </details>
 
 <details class="cli-group">
-<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Test pattern</strong></summary>
+<summary class="cli-summary"><strong>Test pattern</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -124,7 +132,7 @@ Tip: groups below are collapsible (expand the ones you need).
 </details>
 
 <details class="cli-group">
-<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Black level correction</strong></summary>
+<summary class="cli-summary"><strong>Black level correction</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -154,7 +162,7 @@ Tip: groups below are collapsible (expand the ones you need).
 </details>
 
 <details class="cli-group">
-<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Binning</strong></summary>
+<summary class="cli-summary"><strong>Binning</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -185,7 +193,7 @@ Tip: groups below are collapsible (expand the ones you need).
 </details>
 
 <details class="cli-group">
-<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Output</strong></summary>
+<summary class="cli-summary"><strong>Output</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -214,7 +222,7 @@ Tip: groups below are collapsible (expand the ones you need).
 </details>
 
 <details class="cli-group">
-<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Extra</strong></summary>
+<summary class="cli-summary"><strong>Extra</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
@@ -245,7 +253,7 @@ Tip: groups below are collapsible (expand the ones you need).
 </details>
 
 <details class="cli-group">
-<summary style="cursor:pointer; list-style:none;"><strong>&#9656; Meta</strong></summary>
+<summary class="cli-summary"><strong>Meta</strong></summary>
 
 <div class="table-scroll">
 <table class="cli-table">
