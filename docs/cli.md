@@ -14,7 +14,7 @@ permalink: /cli/
 
 This page lists the CLI options.
 
-Options that start with an uppercase letter after `--` are camera parameters (SFNC-like).
+Options that start with an uppercase letter after `--` are camera parameters (SFNC-like).  
 Options that start with a lowercase letter are additional utility tuning knobs; see each option's description for details.
 
 For the authoritative built-in help, run:
